@@ -18,4 +18,10 @@
     <Folder Include="PdfFiles\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="PdfFiles\muss aktualisiert werden_ violett1.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

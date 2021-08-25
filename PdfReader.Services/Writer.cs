@@ -10,6 +10,8 @@ namespace PdfReader.Services
     {
         public string ReadPdfFile(string filePath)
         {
+            
+
             using (var pdf = new PdfDocument(Path.Combine("..//PdfReader", "PdfFiles", filePath)))
             {
                 var options = new PdfTextExtractionOptions

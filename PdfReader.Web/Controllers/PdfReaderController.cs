@@ -20,15 +20,36 @@ namespace PdfReader.Web.Controllers
 
         public async Task<IActionResult> GetFirstFiveLines(IFormFile file)
         {
-            var filePath = Path.Combine("..//PdfReader","PdfFiles", file.FileName);
-
-            using (var fileSteam = new FileStream(filePath, FileMode.Create))
+            if (file == null)
             {
-                await file.CopyToAsync(fileSteam);
+                return NotFound("Please select a file");
             }
 
-            string v = _writer.ReadPdfFile(file.FileName);
-            return View("Index", v);
+            try
+            {
+                var filePath = Path.Combine("..//PdfReader", "PdfFiles", file.FileName);
+
+                if (filePath == null)
+                {
+                    return NotFound("File not found");
+                }
+
+                using (var fileSteam = new FileStream(filePath, FileMode.Create))
+                {
+                    await file.CopyToAsync(fileSteam);
+                }
+
+                string result = _writer.ReadPdfFile(file.FileName);
+                return View("Index", result);
+            }
+            catch (Exception)
+            {
+
+                return BadRequest("File not found");
+            }
+            
+
+            
         }
 
         [HttpGet]
