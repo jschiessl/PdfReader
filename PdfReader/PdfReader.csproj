@@ -7,6 +7,21 @@
 
   <ItemGroup>
     <PackageReference Include="BitMiracle.Docotic.Pdf" Version="8.1.12215" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PdfReader.Services\PdfReader.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="PdfFiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="PdfFiles\muss aktualisiert werden_ violett1.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

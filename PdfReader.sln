@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfReader", "PdfReader\PdfReader.csproj", "{44659019-A66B-422D-8FD2-806086C77C35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PdfReader", "PdfReader\PdfReader.csproj", "{44659019-A66B-422D-8FD2-806086C77C35}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PdfReader.Services", "PdfReader.Services\PdfReader.Services.csproj", "{70BF2DCD-1FCC-4171-8608-FB54B86D2141}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PdfReader.Web", "PdfReader.Web\PdfReader.Web.csproj", "{25A1092E-9B67-4094-8268-E51BDF0EAD68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfReader.Tests", "PdfReader.Tests\PdfReader.Tests.csproj", "{3FED29E9-D560-4AAD-B746-2EE0E0E93559}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{44659019-A66B-422D-8FD2-806086C77C35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44659019-A66B-422D-8FD2-806086C77C35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44659019-A66B-422D-8FD2-806086C77C35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70BF2DCD-1FCC-4171-8608-FB54B86D2141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70BF2DCD-1FCC-4171-8608-FB54B86D2141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70BF2DCD-1FCC-4171-8608-FB54B86D2141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70BF2DCD-1FCC-4171-8608-FB54B86D2141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25A1092E-9B67-4094-8268-E51BDF0EAD68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25A1092E-9B67-4094-8268-E51BDF0EAD68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25A1092E-9B67-4094-8268-E51BDF0EAD68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25A1092E-9B67-4094-8268-E51BDF0EAD68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FED29E9-D560-4AAD-B746-2EE0E0E93559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FED29E9-D560-4AAD-B746-2EE0E0E93559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FED29E9-D560-4AAD-B746-2EE0E0E93559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FED29E9-D560-4AAD-B746-2EE0E0E93559}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using PdfReader.Services;
+using PdfReader.Services.Interfaces;
+using System;
 using System.IO;
-using BitMiracle.Docotic.Pdf;
 
 namespace PdfReader
 {
@@ -8,15 +10,19 @@ namespace PdfReader
     {
         static void Main(string[] args)
         {
-            using (var pdf = new PdfDocument(Path.Combine(Directory.GetCurrentDirectory(), "test.pdf")))
+            var serviceProvider = new ServiceCollection()
+               .AddSingleton<IWriter, Writer>()
+          .BuildServiceProvider();
+
+            var writerService = serviceProvider.GetService<IWriter>();
+
+            string[] files = Directory.GetFiles("PdfFiles");
+
+            foreach (var filePath in files)
             {
-                var options = new PdfTextExtractionOptions
-                {
-                    SkipInvisibleText = true,
-                    WithFormatting = true
-                };
-                string formattedText = pdf.GetText(options);
-                Console.WriteLine(formattedText);
+                var fistFiveLines = writerService.WritePdfFile(filePath);
+
+                Console.WriteLine(fistFiveLines);
             }
         }
     }
