@@ -2,9 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PdfReader.Services.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace PdfReader.Web.Controllers
@@ -39,7 +37,7 @@ namespace PdfReader.Web.Controllers
                     await file.CopyToAsync(fileSteam);
                 }
 
-                string result = _writer.ReadPdfFile(file.FileName);
+                string result = _writer.WritePdfFile(file.FileName);
                 return View("Index", result);
             }
             catch (Exception)
@@ -47,9 +45,6 @@ namespace PdfReader.Web.Controllers
 
                 return BadRequest("File not found");
             }
-            
-
-            
         }
 
         [HttpGet]

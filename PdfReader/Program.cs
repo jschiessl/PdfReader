@@ -20,7 +20,7 @@ namespace PdfReader
 
             foreach (var filePath in files)
             {
-                var fistFiveLines = writerService.ReadPdfFile(filePath);
+                var fistFiveLines = writerService.WritePdfFile(filePath);
 
                 Console.WriteLine(fistFiveLines);
             }
