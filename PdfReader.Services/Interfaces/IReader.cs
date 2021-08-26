@@ -1,7 +1,10 @@
-﻿namespace PdfReader.Services.Interfaces
+﻿using System.IO;
+
+namespace PdfReader.Services.Interfaces
 {
     public interface IReader
     {
-        public string ReadPdf(string filePath);
+        string ReadPdf(string filePath);
+        string ReadPdf(Stream fileStream);
     }
 }

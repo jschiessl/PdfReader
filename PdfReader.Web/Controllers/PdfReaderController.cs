@@ -16,6 +16,12 @@ namespace PdfReader.Web.Controllers
             _writer = writer;
         }
 
+        // You're accepting a new file from the server and read out the contents
+        // So far, so good :-)
+        // But there are a few issues with handling the uploaded file:
+        // * You're creating a local temporary file, and you're not cleaning it up
+        //   * So files will pile up over time, as long as the server runs
+        // * You expect ../PdfReader/PdfFiles to exist and be writable, so that' an external dependency that you cannot control
         public async Task<IActionResult> GetFirstFiveLines(IFormFile file)
         {
             if (file == null)

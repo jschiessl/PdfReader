@@ -26,7 +26,7 @@ namespace PdfReader.Tests
         }
 
         [Fact]
-        public async void ReturnBadRequestOnGetFirstFiveLines()
+        public async void ReturnBadRequest_OnGetFirstFiveLines_IfFilenameMissing()
         {
             var file = new Mock<Microsoft.AspNetCore.Http.IFormFile>();
             IActionResult result = await controller.GetFirstFiveLines(file.Object);
@@ -35,7 +35,7 @@ namespace PdfReader.Tests
         }
 
         [Fact]
-        public async void ReturnNotFoundOnGetFirstFiveLines()
+        public async void Return_NotFoundOnGetFirstFiveLines_IfArgumentNull()
         {
             var file = new Mock<Microsoft.AspNetCore.Http.IFormFile>();
             IActionResult result = await controller.GetFirstFiveLines(null);
