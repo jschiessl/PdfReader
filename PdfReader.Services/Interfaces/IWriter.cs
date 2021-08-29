@@ -1,7 +1,10 @@
-﻿namespace PdfReader.Services.Interfaces
+﻿using System.IO;
+
+namespace PdfReader.Services.Interfaces
 {
     public interface IWriter
     {
-        public string WritePdfFile(string filePath);
+        string WritePdfFile(string filePath);
+        string WritePdfFile(Stream stream);
     }
 }

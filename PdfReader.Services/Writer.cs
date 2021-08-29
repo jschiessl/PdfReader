@@ -1,5 +1,6 @@
 ﻿using PdfReader.Services.Interfaces;
 using System;
+using System.IO;
 using System.Linq;
 
 namespace PdfReader.Services
@@ -15,13 +16,23 @@ namespace PdfReader.Services
 
         public string WritePdfFile(string filePath)
         {
-            string formattedText = reader.ReadPdf(filePath);
+            string rawText = reader.ReadPdf(filePath);
+            return SplitText(rawText);
+        }
 
-            string[] splitedText = formattedText.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+        public string WritePdfFile(Stream fileStream)
+        {
+            string rawText = reader.ReadPdf(fileStream);
+            return SplitText(rawText);
+        }
 
-            string[] firstFiveLine = splitedText.Take(5).ToArray();
+        private string SplitText(string rawText)
+        {
+            string[] splittedText = rawText.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
 
-            return (String.Join(Environment.NewLine, firstFiveLine));
+            string[] firstFiveLines = splittedText.Take(5).ToArray();
+
+            return (String.Join(Environment.NewLine, firstFiveLines));
         }
     }
 }

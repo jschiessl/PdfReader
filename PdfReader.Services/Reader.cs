@@ -19,5 +19,19 @@ namespace PdfReader.Services
                 return pdf.GetText(options);
             }
         }
+
+        public string ReadPdf(Stream fileStream)
+        {
+            using (var pdf = new PdfDocument(fileStream))
+            {
+                var options = new PdfTextExtractionOptions
+                {
+                    SkipInvisibleText = true,
+                    WithFormatting = true
+                };
+
+                return pdf.GetText(options);
+            }
+        }
     }
 }
